@@ -1,0 +1,31 @@
+{
+    "train_csv": "csv_files/drum_train_new.csv",
+    "validation_csv": "csv_files/drum_validation_new.csv",
+    "model_dir": "drum_model_new",
+    "mix_name": "mix",
+    "instrument_list": ["HH", "SD", "KD"],
+    "sample_rate":44100,
+    "frame_length":4096,
+    "frame_step":1024,
+    "T":512,
+    "F":1024,
+    "n_channels":2,
+    "separation_exponent":2,
+    "mask_extension":"zeros",
+    "learning_rate": 1e-4,
+    "batch_size":1,
+    "training_cache":"cache/training",
+    "validation_cache":"cache/validation",
+    "train_max_steps": 100000,
+    "throttle_secs":1800,
+    "random_seed":2,
+    "save_checkpoints_steps":1000,
+    "save_summary_steps":5,
+    "model":{
+        "type":"unet.unet",
+        "params":{
+            "conv_activation":"ELU",
+            "deconv_activation":"ELU"
+        }
+    }
+}
